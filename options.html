@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Options</title>
+        <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/options.css" rel="stylesheet" />
+    </head>
+    <body>
+        <form>
+        <label for="vaultName">Vault Name</label>
+        <input type="text" name="vaultName" id="vaultName" />
+
+        <label for="folder">Folder</label>
+        <input type="text" name="folder" id="folder" />
+
+        <label for="fileName">File Name</label>
+        <input type="text" name="fileName" id="fileName" />
+
+        <label for="template">Template</label>
+        <textarea name="template" id="template"></textarea>
+
+        <p>
+            {{title}}<br/>
+            {{link}}<br/>
+            {{image}}<br/>
+            {{tags}}<br/>
+            {{date}}<br/>
+            {{comment}}
+        </p>
+
+        <button type="submit" id="submit">Save</button>
+        </form>
+
+        <script src="scripts/options.js"></script>
+    </body>
+</html>

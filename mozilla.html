@@ -1,0 +1,47 @@
+Save bookmarks as markdown files directly into your Obsidian vault.
+
+<b>✨ Features</b>
+<ul>
+  <li>Save bookmarks to sub-folders within your Obsidian vault.</li>
+  <li>Automatically grab images from the bookmarked website.</li>
+  <li>Customize the template for your bookmark notes.</li>
+</ul>
+
+<b>⚙️ Setup</b>
+<ol>
+    <li>Install the Extension: Add the Obsidian Bookmarks extension to your Firefox browser.</li>
+    <li>Configure Options: Go to the add-on options page in Firefox's Add-ons tab and set the vault name, folder name, file name template, and note template.</li>
+</ol>
+
+<b>💡 Tips</b>
+You can create a bookmarks viewer in Obsidian with <a href="https://github.com/kepano/obsidian-minimal">Minimal</a> Theme, <a href="https://blacksmithgu.github.io/obsidian-dataview/">Dataview</a> plugin and this note:
+<code>
+---
+cssclasses:
+- cards
+- cards-cover
+- cards-2-3
+- cards-cols-4
+- max
+---
+
+```dataview
+TABLE
+   	WITHOUT id ("![](" + Cover + ")") AS Cover,
+   	("[" + Title + "](" + Link + ")") AS Title,
+   	Date,
+   	Tags[0] + ", " + Tags[1] + ", " + Tags[2]  AS Tags,
+   	("[[" + file.path + "| Edit ]]") AS Edit
+FROM "Bookmarks"
+SORT Title ASC
+```
+</code>
+
+<b>📝 Notes</b>
+<ul>
+  <li>This is a beta version, image grabbing may not work on all websites.</li>
+  <li>If the save button is not working, try reclicking it or refreshing the page.</li>
+  <li>This is an unofficial extension and is not affiliated with Obsidian.</li>
+</ul>
+
+Happy bookmarking!
