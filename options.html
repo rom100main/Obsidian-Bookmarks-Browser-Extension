@@ -9,29 +9,43 @@
     </head>
     <body>
         <form>
-        <label for="vaultName">Vault Name</label>
-        <input type="text" name="vaultName" id="vaultName" />
+            <label for="vaultName">Vault Name</label>
+            <input type="text" name="vaultName" id="vaultName" />
 
-        <label for="folder">Folder</label>
-        <input type="text" name="folder" id="folder" />
+            <label for="folder">Folder</label>
+            <input type="text" name="folder" id="folder" />
 
-        <label for="fileName">File Name</label>
-        <input type="text" name="fileName" id="fileName" />
+            <label for="fileName">File Name</label>
+            <input type="text" name="fileName" id="fileName" />
 
-        <label for="template">Template</label>
-        <textarea name="template" id="template"></textarea>
+            <label for="template">Template</label>
+            <textarea name="template" id="template"></textarea>
 
-        <p>
-            {{title}}<br/>
-            {{link}}<br/>
-            {{image}}<br/>
-            {{tags}}<br/>
-            {{date}}<br/>
-            {{comment}}
-        </p>
+            <p>
+                {{title}}<br/>
+                {{link}}<br/>
+                {{image}}<br/>
+                {{tags}}<br/>
+                {{date}}<br/>
+                {{comment}}
+            </p>
 
-        <button type="submit" id="submit">Save</button>
+            <button type="submit" id="submit">Save</button>
         </form>
+
+        <div>
+            <b>Suggested sub-folders</b>
+            <input type="text" id="subFolders" placeholder="New sub-folder" />
+            <button id="setSubFolders">Set</button>
+            Separate each sub-folder with ,
+        </div>
+
+        <div>
+            <b>Suggested tags</b>
+            <input type="text" id="tags" placeholder="Tags" />
+            <button id="setTags">Set</button>
+            Separate each tag with ,
+        </div>
 
         <script src="scripts/options.js"></script>
     </body>

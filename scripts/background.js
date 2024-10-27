@@ -6,7 +6,7 @@ browser.runtime.onInstalled.addListener(function (details) {
     fileName = "{{date}} - {{title}}";
     template = `---
 Link: {{link}}
-Title: {{title}}
+Title: "{{title}}"
 Image: {{image}}
 Date: {{date}}
 Tags: {{tags}}
@@ -21,6 +21,8 @@ Tags: {{tags}}
       obsidianbookmarks_opts_folder: folder,
       obsidianbookmarks_opts_file_name: fileName,
       obsidianbookmarks_opts_template: template,
+      obsidianbookmarks_opts_tags: [],
+      obsidianbookmarks_opts_sub_folders: [],
     });
 
     // Open options page
@@ -31,12 +33,12 @@ Tags: {{tags}}
 });
 
 // Receive data from content script
-browser.runtime.onMessage.addListener(function (message) {
+browser.runtime.onMessage.addListener(async function (message) {
   // console.log("Received message from content script");
   submitNote(message);
 });
 
-function submitNote(data) {
+async function submitNote(data) {
   let vaultName = data.vaultName;
   let folder = data.folder;
   let subFolder = data.subFolder;

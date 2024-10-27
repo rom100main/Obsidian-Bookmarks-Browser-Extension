@@ -21,9 +21,12 @@ browser.tabs
           "obsidianbookmarks_opts_folder",
           "obsidianbookmarks_opts_file_name",
           "obsidianbookmarks_opts_template",
+          "obsidianbookmarks_opts_tags",
+          "obsidianbookmarks_opts_sub_folders",
         ],
       )
       .then(function (result) {
+        // Base values
         vaultName = result.obsidianbookmarks_opts_vault_name;
         vaultName = encodeURIComponent(vaultName);
 
@@ -36,6 +39,24 @@ browser.tabs
         fileName = result.obsidianbookmarks_opts_file_name;
 
         template = result.obsidianbookmarks_opts_template;
+
+        // Tags
+        let tags = result.obsidianbookmarks_opts_tags || [];
+        let tagsList = document.getElementById("tagsList");
+        tags.forEach(function (tag) {
+          let option = document.createElement("option");
+          option.value = tag;
+          tagsList.appendChild(option);
+        });
+
+        // Sub Folders
+        let subFolders = result.obsidianbookmarks_opts_sub_folders || [];
+        let subFoldersList = document.getElementById("subFoldersList");
+        subFolders.forEach(function (subFolder) {
+          let option = document.createElement("option");
+          option.value = subFolder;
+          subFoldersList.appendChild(option);
+        });
       });
 
     document.getElementById("title").value = tabs[0].title;
@@ -45,8 +66,8 @@ browser.tabs
     link = tabs[0].url;
   });
 
-document.getElementById("submit").addEventListener("click", function () {
-  let data = preBuildNote();
+document.getElementById("submit").addEventListener("click", async function () {
+  let data = await preBuildNote();
 
   // Execute content script to find image
   // console.log("Execute content script");
@@ -62,7 +83,7 @@ document.getElementById("submit").addEventListener("click", function () {
   );
 });
 
-function preBuildNote() {
+async function preBuildNote() {
   //Values
   let tags = document.getElementById("tags").value;
   tags = `[${tags.replace(/[^,]+/g, "'$&'").replace(/,\s*$/, "")}]`;
