@@ -5,7 +5,7 @@ Obsidian Bookmarks is a Firefox extension that allows you to save bookmarks as m
 ## ✨ Features
 
 - Save bookmarks to sub-folders within your Obsidian vault.
-- Automatically grab images from the bookmarked website.
+- Automatically grab the most relevant image from the bookmarked website.
 - Customize the template for your bookmark notes.
 
 ## ⚙️ Setup
