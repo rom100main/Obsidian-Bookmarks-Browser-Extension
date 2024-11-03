@@ -50,6 +50,8 @@ async function submitNote(data) {
 
   // Replace
   fileName = fileName.replace(/{{image}}/g, imgSrc).replace(/[\/\\:]/g, " ");
+  fileName = fileName.replace(/[<>:"/\\?*|^]/g, ""); // remove invalid characters
+  fileName = fileName.replace(/[.\s]+$/, "");
   fileName = encodeURIComponent(fileName);
 
   template = template.replace(/{{image}}/g, imgSrc);
