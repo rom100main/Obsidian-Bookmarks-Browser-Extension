@@ -1,7 +1,7 @@
-textarea {
-    min-height: 250px;
+main > * {
+    margin-bottom: 3rem;
 }
 
-div {
-    margin-top: 3rem;
+textarea {
+    min-height: 250px;
 }

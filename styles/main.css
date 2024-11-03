@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-direction: column;
+
     min-width: 300px;
     padding: 0 20px;
 
@@ -7,6 +10,12 @@ body {
     font-size: 16px;
     font-family: sans-serif;
     color: white;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 *:focus {
@@ -38,6 +47,8 @@ textarea {
 
     border: none;
     border-radius: 5px;
+
+    box-sizing: border-box;
 
     font-size: 16px;
 

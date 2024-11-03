@@ -1,3 +1,22 @@
+if (window.location.search.includes("firstInstall=true")) {
+  let mainElement = document.querySelector("main");
+  if (mainElement) {
+    let divElement = document.createElement("div");
+    divElement.innerHTML = `
+      <h1>Welcome to Obsidian Bookmarks!</h1>
+      <p>
+        Thank you for installing the extension!<br/>
+        <br/>
+        In order to work properly, you need to set the right vault name.<br/>
+        You can change these settings at any time by clicking on the extension icon and selecting "Options".<br/>
+        <br/>
+        Happy bookmarking!
+      </p>
+      `;
+    mainElement.innerHTML = divElement.outerHTML + mainElement.innerHTML;
+  }
+}
+
 browser.storage.local
   .get([
     "obsidianbookmarks_opts_vault_name",
@@ -44,6 +63,7 @@ document.getElementById("submit").addEventListener("click", function () {
 
 document.getElementById("setTags").addEventListener("click", function () {
   let tags = document.getElementById("tags").value.split(",");
+  tags = tags.map((tag) => tag.trim());
   browser.storage.local.set({
     obsidianbookmarks_opts_tags: tags,
   });
@@ -51,6 +71,7 @@ document.getElementById("setTags").addEventListener("click", function () {
 
 document.getElementById("setSubFolders").addEventListener("click", function () {
   let subFolders = document.getElementById("subFolders").value.split(",");
+  subFolders = subFolders.map((subFolder) => subFolder.trim());
   browser.storage.local.set({
     obsidianbookmarks_opts_sub_folders: subFolders,
   });

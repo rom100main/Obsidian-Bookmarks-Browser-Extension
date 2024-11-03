@@ -27,7 +27,7 @@ Tags: {{tags}}
 
     // Open options page
     browser.tabs.create({
-      url: browser.runtime.getURL("options.html"),
+      url: browser.runtime.getURL("options.html?firstInstall=true"),
     });
   }
 });
