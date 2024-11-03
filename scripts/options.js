@@ -3,12 +3,12 @@ if (window.location.search.includes("firstInstall=true")) {
   if (mainElement) {
     let divElement = document.createElement("div");
     divElement.innerHTML = `
-      <h1>Welcome to Obsidian Bookmarks!</h1>
+      <h1>Welcome to Obsidian Bookmarks</h1>
       <p>
-        Thank you for installing the extension!<br/>
+        Thank you for installing the extension.<br/>
         <br/>
         In order to work properly, you need to set the right vault name.<br/>
-        You can change these settings at any time by clicking on the extension icon and selecting "Options".<br/>
+        You can change these settings at any time by clicking on the extension icon then settings icon.<br/>
         <br/>
         Happy bookmarking!
       </p>
