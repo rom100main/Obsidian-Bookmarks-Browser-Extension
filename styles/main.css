@@ -1,15 +1,30 @@
+:root {
+    --c-bg: #171717;
+    --c-text: white;
+    --c-link: rgb(167, 139, 250);
+    --c-focus: #404040;
+
+    --c-input-bg: #262626;
+
+    --c-button-bg: #7c3aed;
+    --c-button-focus: rgb(167, 139, 250);
+
+    --c-icon: rgb(167, 139, 250);
+}
+
 body {
     display: flex;
     flex-direction: column;
 
     min-width: 300px;
+    margin: 0;
     padding: 0 20px;
 
-    background-color: #171717;
+    background-color: var(--c-bg);
 
     font-size: 16px;
     font-family: sans-serif;
-    color: white;
+    color: var(--c-text);
 }
 
 main {
@@ -19,7 +34,7 @@ main {
 }
 
 *:focus {
-    outline: 3px #404040 solid;
+    outline: 3px var(--c-focus) solid;
 }
 
 p {
@@ -52,11 +67,11 @@ textarea {
 
     font-size: 16px;
 
-    background-color: #262626;
-    color: white;
+    background-color: var(--c-input-bg);
+    color: var(--c-text);
 }
 #link {
-    color: rgb(167, 139, 250);
+    color: var(--c-link);
     text-decoration: underline;
 }
 
@@ -69,9 +84,24 @@ button {
 
     font-size: 16px;
 
-    background-color: #7c3aed;
-    color: white;
+    background-color: var(--c-button-bg);
+    color: var(--c-text);
 }
 button:focus {
-    outline: 3px rgb(167, 139, 250) solid;
+    outline: 3px var(--c-button-focus) solid;
+}
+
+.icon > * {
+    stroke: var(--c-icon);
+}
+#settings {
+    all: unset;
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    height: 24px;
+    border-radius: 5px;
+}
+#settings:focus {
+    outline: 3px var(--c-icon) solid;
 }

@@ -131,3 +131,9 @@ async function preBuildNote() {
 
   return data;
 }
+
+document.getElementById("settings").addEventListener("click", function () {
+  browser.tabs.create({
+    url: browser.runtime.getURL("options.html"),
+  });
+});

@@ -9,9 +9,7 @@ Obsidian Bookmarks is a Firefox extension that allows you to save bookmarks as m
 - Customize the template for your bookmark notes.
 
 ## ⚙️ Setup
-
-1. **Install the Extension**: Add the Obsidian Bookmarks extension to your Firefox browser.
-2. **Configure Options**: Go to the add-on options page in Firefox's Add-ons tab and set the vault name, folder name, file name template, and note template.
+On the welcome page (or in the extension settings), set the right vault name and you are ready to go!
 
 ## 💡 Tips
 
